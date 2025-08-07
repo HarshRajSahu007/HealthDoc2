@@ -33,3 +33,15 @@ class BaseAgent(ABC):
         self.state.status = status
 
         if output_data:
+            self.state.output_data = output_data
+        if error:
+            self.state.errors.append(error)
+        self.logger.info(f"Agent {self.agent_id} status updated to: {status}")
+
+    def get_state(self) -> Dict[str, Any]:
+        """Get current agent state"""
+        return self.state.dict()
+    
+    def validate_input(self, input_data: Dict[str, Any]) -> bool:
+        """Validate input data format"""
+        return isinstance(input_data, dict)
