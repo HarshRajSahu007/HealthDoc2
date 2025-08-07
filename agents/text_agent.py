@@ -103,7 +103,7 @@ class TextAgent(BaseAgent):
     
     def _calculate_confidence(self, medical_info: Dict, symptoms_analysis: Dict) -> float:
         """Calculate confidence score based on extracted information"""
-        score = 0.5  # Base score
+        score = 0.5 
         
         if medical_info.get('symptoms'):
             score += 0.2

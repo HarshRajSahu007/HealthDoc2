@@ -3,3 +3,8 @@ openai
 streamlit
 pydantic
 asyncio
+librosa
+scipy
+numpy
+praat-parselmouth
+scikit-learn
